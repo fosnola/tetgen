@@ -326,35 +326,35 @@ public:
   TetSizeFunc tetunsuitable;
 
   // Input & output routines.
-  bool load_node_call(FILE* infile, int markers, int uvflag, char*);
-  bool load_node(char*);
-  bool load_edge(char*);
-  bool load_face(char*);
-  bool load_tet(char*);
-  bool load_vol(char*);
-  bool load_var(char*);
-  bool load_mtr(char*);
-  bool load_pbc(char*);
-  bool load_poly(char*);
-  bool load_off(char*);
-  bool load_ply(char*);
-  bool load_stl(char*);
-  bool load_vtk(char*);
-  bool load_medit(char*, int);
-  bool load_plc(char*, int);
-  bool load_tetmesh(char*, int);
-  void save_nodes(char*);
-  void save_elements(char*);
-  void save_faces(char*);
-  void save_edges(char*);
-  void save_neighbors(char*);
-  void save_poly(char*);
-  void save_faces2smesh(char*);
+  bool load_node_call(FILE* infile, int markers, int uvflag, char const *);
+  bool load_node(char const *);
+  bool load_edge(char const *);
+  bool load_face(char const *);
+  bool load_tet(char const *);
+  bool load_vol(char const *);
+  bool load_var(char const *);
+  bool load_mtr(char const *);
+  bool load_pbc(char const *);
+  bool load_poly(char const *);
+  bool load_off(char const *);
+  bool load_ply(char const *);
+  bool load_stl(char const *);
+  bool load_vtk(char const *);
+  bool load_medit(char const *, int);
+  bool load_plc(char const *, int);
+  bool load_tetmesh(char const *, int);
+  void save_nodes(char const *);
+  void save_elements(char const *);
+  void save_faces(char const *);
+  void save_edges(char const *);
+  void save_neighbors(char const *);
+  void save_poly(char const *);
+  void save_faces2smesh(char const *);
 
   // Read line and parse string functions.
   char *readline(char* string, FILE* infile, int *linenumber);
   char *findnextfield(char* string);
-  char *readnumberline(char* string, FILE* infile, char* infilename);
+  char *readnumberline(char* string, FILE* infile, char const * infilename);
   char *findnextnumber(char* string);
 
   static void init(polygon* p) {
@@ -680,8 +680,8 @@ public:
   void usage();
 
   // Command line parse routine.
-  bool parse_commandline(int argc, char **argv);
-  bool parse_commandline(char *switches) {
+  bool parse_commandline(int argc, char const * const *argv);
+  bool parse_commandline(char const *switches) {
     return parse_commandline(0, &switches);
   }
 
@@ -2061,9 +2061,9 @@ public:
   void outsubsegments(tetgenio*);
   void outneighbors(tetgenio*);
   void outvoronoi(tetgenio*);
-  void outsmesh(char*);
-  void outmesh2medit(char*);
-  void outmesh2vtk(char*);
+  void outsmesh(char const *);
+  void outmesh2medit(char const *);
+  void outmesh2vtk(char const *);
 
 
 
